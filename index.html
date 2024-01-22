@@ -42,12 +42,12 @@
 
       <!-- Gallery -->
       <div class="gallery">
-        <figure v-for="(pic, i) in pictures" v-show="currentIndex === i" >
+        <figure v-for="(pic, i) in pictures" v-show="currentIndex === i" @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
           <figcaption>
             <h2>{{pic.name}}</h2>
             <h3>{{pic.description}}</h3>
           </figcaption>
-          <img :src="`img/${pic.image}`" :alt="pic.name">
+          <img :src="`img/${pic.image}`" :alt="pic.name ">
         </figure>
       </div>
 

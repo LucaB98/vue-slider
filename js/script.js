@@ -5,7 +5,8 @@ const {createApp} = Vue;
 const app = createApp({
     data:() => ({
         pictures,
-        currentIndex: 0
+        currentIndex: 0,
+        autoplay: null,
     }),
     computed:{
         lastElementIndex(){
@@ -31,7 +32,19 @@ const app = createApp({
             }else{
                 this.currentIndex = target;
             }
+        },
+        stopAutoPlay(){
+            clearInterval(this.autoplay)
+        },
+        startAutoPlay(){
+            this.autoplay = setInterval(() => {
+                this.setCurrentIndex('next')
+            },3000);
         }
+
+    },
+    mounted(){
+        this.startAutoPlay(); 
     }
 })
 
