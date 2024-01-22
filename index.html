@@ -27,7 +27,7 @@
 
   <!-- vue js -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  
+
 <!-- JavaScript -->
   <script defer src="js/script.js"></script>
 
@@ -44,7 +44,7 @@
       <div class="gallery">
         <figure class="active">
           <figcaption>
-            <h2>Svezia</h2>
+            <h2>{{pictures.name}}</h2>
             <h3>Scandinavia's blend of nature and innovation.</h3>
           </figcaption>
           <img src="img/01.jpg" alt="Svezia">
@@ -57,7 +57,7 @@
 
     <!-- Thumbnails -->
     <div id="thumbnails">
-      <img v-for="destination in destinations" src="img/01.jpg" alt="Svezia" class="active">
+      <img v-for="(pic, i) in pictures" :src="`img/${pic.image}`" :alt= "pic.name" :class="{active: i === currentIndex}">
     </div>
 
     <!-- <div class="autoplay-controls">
