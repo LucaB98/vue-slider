@@ -6,7 +6,17 @@ const app = createApp({
     data:() => ({
         pictures,
         currentIndex: 0
-    })
+    }),
+    computed:{
+        isLastIndex(){
+            return this.currentIndex === this.pictures.length - 1;
+        },
+
+        isFirstIndex(){
+            return this.currentIndex === 0;
+        }
+    },
+    
 })
 
 
