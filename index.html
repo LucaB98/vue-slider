@@ -19,15 +19,23 @@
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- JavaScript -->
+
+
+
+  <!-- JavaScript data-->
   <script src="js/data.js"></script>
+
+  <!-- vue js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+<!-- JavaScript -->
   <script defer src="js/script.js"></script>
 
 </head>
 
 <body>
 
-  <div class="container">
+  <div id="root" class="container">
     <div id="carousel">
       <!-- Prev button -->
       <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button"></i>
@@ -49,7 +57,7 @@
 
     <!-- Thumbnails -->
     <div id="thumbnails">
-      <img src="img/01.jpg" alt="Svezia" class="active">
+      <img v-for="destination in destinations" src="img/01.jpg" alt="Svezia" class="active">
     </div>
 
     <!-- <div class="autoplay-controls">
